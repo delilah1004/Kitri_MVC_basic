@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>mvcExample</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- Directory -->
+  <servlet>
+  	<servlet-name>Directory</servlet-name>
+  	<servlet-class>com.java.mvc01.Directory</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>Directory</servlet-name>
+  	<url-pattern>*.nhn</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Controller -->
+  <servlet>
+  	<servlet-name>Controller</servlet-name>
+  	<servlet-class>com.java.mvc02.Controller</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>Controller</servlet-name>
+  	<url-pattern>*.kitri</url-pattern>
+  </servlet-mapping>
+  
+  <!-- SampleCnt -->
+  <servlet>
+  	<servlet-name>SampleCnt</servlet-name>
+  	<servlet-class>com.java.mvc03.SampleCnt</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>SampleCnt</servlet-name>
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- CommandCnt -->
+  <servlet>
+  	<servlet-name>CommandCnt</servlet-name>
+  	<servlet-class>com.java.mvc04.CommandCnt</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>CommandCnt</servlet-name>
+  	<url-pattern>*.cmd</url-pattern>
+  </servlet-mapping>
+  
+  <!-- FrontCnt -->
+  <servlet>
+  	<servlet-name>FrontCnt</servlet-name>
+  	<servlet-class>com.java.mvc05.FrontCnt</servlet-class>
+  	
+  	<init-param>
+  		<param-name>configFile</param-name>
+  		<param-value>C:\delilah\mvc\workspace\mvcExample\WebContent\WEB-INF\commandURI.properties</param-value>
+  	</init-param>
+  	
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>FrontCnt</servlet-name>
+  	<url-pattern>*.happy</url-pattern>
+  </servlet-mapping>
+  
+  <!-- FrontController -->
+  <servlet>
+  	<servlet-name>FrontController</servlet-name>
+  	<servlet-class>com.java.mvc06.FrontController</servlet-class>
+  	<init-param>
+  		<param-name>configFile</param-name>
+  		<param-value>/WEB-INF/cmdURI.properties</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>FrontController</servlet-name>
+  	<url-pattern>*.stu</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
